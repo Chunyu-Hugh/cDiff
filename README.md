@@ -45,12 +45,14 @@ If you are interested in try our method for your own custom dataset (forward mod
 
 With these component ready, go to `DATASET_CONFIG` in `./datasets/__init__.py`, register your dataset with new key value pair like
 
+```.python
 "your_dataset_name": {
         "module": "datasets.your_dataset_name",
         "dataset_generator": "return_dl_ds",
         "sample_theta": "sample_theta",
         "sample_data": "sample_X",
     },
+```
 
 Then you are able to run with your own dataset with 
 
