@@ -1,6 +1,6 @@
 ##  Conditional diffusions for amortized neural posterior estimation
 
-**[AISTATS2025]Conditional diffusions for amortized neural posterior estimation**<br>
+**[AISTAT S2025] Conditional diffusions for amortized neural posterior estimation**<br>
 [Tianyu Chen](https://tianyucodings.github.io/), [Vansh Bansal](https://bansal-vansh.github.io/), and [James G. Scott](https://jgscott.github.io/) <br> https://arxiv.org/abs/2410.19105
 <br>
 
