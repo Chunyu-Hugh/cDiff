@@ -1,6 +1,6 @@
 ##  Conditional diffusions for neural posterior estimation
 
-**[AISTATS 2025] Conditional diffusions for neural posterior estimation**<br>
+**[AISTATS2025]Conditional diffusions for neural posterior estimation**<br>
 [Tianyu Chen](https://tianyucodings.github.io/), [Vansh Bansal](https://bansal-vansh.github.io/), and [James G. Scott](https://jgscott.github.io/) <br> https://arxiv.org/abs/2410.19105
 <br>
 
@@ -16,11 +16,11 @@ This framework provides a scalable and adaptable solution for amortized Bayesian
 
 We present three concise examples to demonstrate the effectiveness of our diffusion-based SBI method (**cDiff**) compared to the normalizing flow-based SBI method (**cNF**).
 
-![](assets/cos.png)
+![](asserts/cos.png)
 
-![](assets/witch.png)
+![](asserts/witch.png)
 
-![](assets/beta.png)
+![](asserts/beta.png)
 
 ## Experiments
 
@@ -34,31 +34,34 @@ Running experiments based our code could be quite easy, so below we use `normal_
 python main.py --save_path result --dataset normal_wishart --device 2 --data_type=iid --epochs=5000 --model=Diffusion --use_encoder  --save_model --eval_interval=40 --lr_decay  --n_run=10  --ecp_n_sim=100 --ecp_n_samples=200
 ```
 
-### Custon Dataset
+### Custom Dataset
 
-If you are interested in try our method for your own custom dataset (forward model), please go to `./datasets` folder and add a python file with your dataset name, for example, `./datasets/your_dataset_name.py`. You can mimic the structure of `./datasets/dirichlet_laplace.py`, but make sure you include these four functions: 
+If you’re interested in applying our method to your own custom dataset (forward model), follow these steps:
 
-- sample_theta: sample from $p(\theta)$
-- sample_X: sample from $p(X|\theta)$
-- my_gen_sample_size: randomly decide how many $X$ you will sample from $p(X|\theta)$ for a $\theta$.
-- return_dl_ds: register forward model to a dataloader.
+1. **Add Your Dataset File**  
+   Navigate to the `./datasets` folder and create a new Python file named after your dataset, e.g., `./datasets/your_dataset_name.py`.
 
-With these component ready, go to `DATASET_CONFIG` in `./datasets/__init__.py`, register your dataset with new key value pair like
+2. **Implement the Required Functions**  
+   Your dataset file should define the following four functions:
 
-```.python
-"your_dataset_name": {
-        "module": "datasets.your_dataset_name",
-        "dataset_generator": "return_dl_ds",
-        "sample_theta": "sample_theta",
-        "sample_data": "sample_X",
-    },
-```
+   - `sample_theta`: Samples from  $p(\theta)$.
+   - `sample_X`: Samples from $p(X|\theta)$.
+   - `my_gen_sample_size`: Randomly determines how many $X$ samples to draw from $p(X|\theta)$ for a given $\theta$.
+   - `return_dl_ds`: Registers the forward model with a dataloader.
 
-Then you are able to run with your own dataset with 
+   You can refer to `./datasets/dirichlet_laplace.py` as an example.
 
-```.bash
-python main.py --save_path result --dataset your_dataset_name --device 2 --data_type=iid --epochs=5000 --model=Diffusion --use_encoder  --save_model --eval_interval=40 --lr_decay  --n_run=10  --ecp_n_sim=100 --ecp_n_samples=200
-```
+3. **Register Your Dataset**  
+   Open `./datasets/__init__.py` and update the `DATASET_CONFIG` dictionary by adding a new key-value pair:
+
+   ```python
+   "your_dataset_name": {
+       "module": "datasets.your_dataset_name",
+       "dataset_generator": "return_dl_ds",
+       "sample_theta": "sample_theta",
+       "sample_data": "sample_X",
+   },
+
 
 ## Citation
 
