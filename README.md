@@ -16,11 +16,11 @@ This framework provides a scalable and adaptable solution for amortized Bayesian
 
 We present three concise examples to demonstrate the effectiveness of our diffusion-based SBI method (**cDiff**) compared to the normalizing flow-based SBI method (**cNF**).
 
-![](asserts/cos.png)
+![](assets/cos.png)
 
-![](asserts/witch.png)
+![](assets/witch.png)
 
-![](asserts/beta.png)
+![](assets/beta.png)
 
 ## Experiments
 
