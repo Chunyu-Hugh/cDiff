@@ -7,8 +7,17 @@ from torch.utils.data import DataLoader
 hyperpar_dict = {
     "z_min": 0.0,
     "z_max": 2.0,
-    "noise_sigma": 0.0,  # add Gaussian noise to (x, y) if desired
+    # Standard deviation of Gaussian noise added to (x, y)
+    # Set via set_circle_noise_sigma(sigma)
+    "noise_sigma": 0.0,
 }
+
+
+def set_circle_noise_sigma(sigma: float):
+    """
+    Set the Gaussian noise std added to (x, y) samples.
+    """
+    hyperpar_dict["noise_sigma"] = float(sigma)
 
 
 def sample_theta():
