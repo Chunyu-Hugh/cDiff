@@ -26,6 +26,12 @@ DATASET_CONFIG = {
         "sample_theta": "sample_theta",
         "sample_data": "sample_witch_hat_data",
     },
+    "circle": {
+        "module": "datasets.circle",
+        "dataset_generator": "return_circle_dl",
+        "sample_theta": "sample_theta",
+        "sample_data": "sample_circle_data",
+    },
     "stochastic_vol": {
         "module": "datasets.stochastic_vol",
         "dataset_generator": "return_stochastic_vol_dl",
