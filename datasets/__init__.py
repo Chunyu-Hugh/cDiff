@@ -30,7 +30,7 @@ DATASET_CONFIG = {
         "module": "datasets.circle",
         "dataset_generator": "return_circle_dl",
         "sample_theta": "sample_theta",
-        "sample_data": "sample_circle_data",
+        "sample_data": "sample_circle_radius",
     },
     "stochastic_vol": {
         "module": "datasets.stochastic_vol",
