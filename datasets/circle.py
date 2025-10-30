@@ -11,7 +11,7 @@ hyperpar_dict = {
     "z_max": 2.0,
     # Standard deviation of Gaussian noise added to observed radius y
     # Set via set_circle_noise_sigma(sigma)
-    "noise_sigma": 0.0,
+    "noise_sigma": 0.02,
 }
 
 

@@ -196,7 +196,7 @@ if __name__ == "__main__":
     parser.add_argument('--n_run', type=int, default=1, help="How many runs to repeat")
     parser.add_argument('--lr', type=float, default=1e-3)
     parser.add_argument('--lr_decay', action='store_true',)
-    parser.add_argument('--n_batches', type=int, default=2, help="Number of batches for an epoch")
+    parser.add_argument('--n_batches', type=int, default=20, help="Number of batches for an epoch")
     parser.add_argument('--batch_size', type=int, default=512)
     parser.add_argument('--save_path', type=str, default="./test")
     parser.add_argument('--alpha', type=float, default=0.1, help="Parameter for normalizing flow to control Lipschitz constant.")
