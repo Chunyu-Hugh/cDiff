@@ -19,7 +19,7 @@ def trainer(data_loader, dataset, model, optimizer, scheduler, epochs, device, l
     for epoch in range(epochs):
         start_time = time.time()
         epoch_loss = []
-
+        temport_num = 0
         for batch in data_loader:
             theta, y = batch
             if y.shape[1] == 1:
@@ -34,6 +34,8 @@ def trainer(data_loader, dataset, model, optimizer, scheduler, epochs, device, l
 
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=100.0)
             optimizer.step()
+            temport_num += 1
+            print(f"Batch {temport_num} of {len(data_loader)}")
 
         if lr_decay:
             scheduler.step()
@@ -196,8 +198,8 @@ if __name__ == "__main__":
     parser.add_argument('--n_run', type=int, default=1, help="How many runs to repeat")
     parser.add_argument('--lr', type=float, default=1e-3)
     parser.add_argument('--lr_decay', action='store_true',)
-    parser.add_argument('--n_batches', type=int, default=20, help="Number of batches for an epoch")
-    parser.add_argument('--batch_size', type=int, default=512)
+    parser.add_argument('--n_batches', type=int, default=200, help="Number of batches for an epoch")
+    parser.add_argument('--batch_size', type=int, default=1024)
     parser.add_argument('--save_path', type=str, default="./test")
     parser.add_argument('--alpha', type=float, default=0.1, help="Parameter for normalizing flow to control Lipschitz constant.")
     parser.add_argument('--device', type=int, default=3)
