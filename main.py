@@ -126,6 +126,7 @@ def main(args):
     theta, y = next(iter(dl))
     y_dim = y.shape[-1]
     theta_dim = theta.shape[1]
+    print(f"Finished loading dataset")
 
     for i in range(1,n_run+1):
         seed = i + args.seed_start
