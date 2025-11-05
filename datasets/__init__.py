@@ -97,7 +97,13 @@ DATASET_CONFIG = {
         "dataset_generator": "return_dl_ds",
         "sample_theta": "sample_theta",
         "sample_data": "sample_y",
-    }
+    },
+    "physics": {
+        "module": "datasets.physics",
+        "dataset_generator": "return_physics_dl",
+        "sample_theta": "sample_theta",
+        "sample_data": "sample_physics_data",
+    },
 }
 
 
