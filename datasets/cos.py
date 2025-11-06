@@ -29,7 +29,7 @@ def return_cos_dl(n_batches=256,batch_size=128, n_sample=None, return_ds=False):
         def my_gen_sample_size(n, low=100, high=1000):
             return np.random.randint(low=low, high=high, size=n)
     ds = BayesDataStream(n_batches, batch_size, sample_theta, sample_cos_data, my_gen_sample_size)
-    dl = DataLoader(ds, batch_size=batch_size, num_workers=0, pin_memory=True)
+    dl = DataLoader(ds, batch_size=batch_size, num_workers=16, pin_memory=True)
     ds.reset_batch_sample_sizes()
     if return_ds:
         return dl,ds

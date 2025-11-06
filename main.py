@@ -203,7 +203,7 @@ if __name__ == "__main__":
     parser.add_argument('--batch_size', type=int, default=1024)
     parser.add_argument('--save_path', type=str, default="./test")
     parser.add_argument('--alpha', type=float, default=0.1, help="Parameter for normalizing flow to control Lipschitz constant.")
-    parser.add_argument('--device', type=int, default=3)
+    parser.add_argument('--device', type=int, default=0)
     parser.add_argument('--use_encoder', action='store_true', help="Use summary network or not")
     parser.add_argument('--use_emperical_sigma', action='store_true', help="whether to set \sigma_data as empirical std of data, otherwise 0.5 as EDM")
     parser.add_argument('--num_hidden_layer',type=int, default=4, help="Number of hidden layers for diffusion model")
