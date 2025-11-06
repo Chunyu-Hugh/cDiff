@@ -1,0 +1,20 @@
+python main.py \
+  --model Diffusion \
+  --dataset physics \
+  --epochs 5000 \
+  --lr 1e-4 \
+  --lr_decay \
+  --n_batches 256 \
+  --batch_size 512 \
+  --num_hidden_layer 4 \
+  --device 0 \
+  --n_run 1 \
+  --seed_start 0 \
+  --n_cal 1000 \
+  --L 100 \
+  --ecp_n_sim 1000 \
+  --ecp_n_samples 2000 \
+  --eval_interval 100 \
+  --save_model \
+  --save_path result \
+  --data_type iid
