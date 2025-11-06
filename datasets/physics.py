@@ -82,7 +82,7 @@ def return_physics_dl(n_batches=256, batch_size=128, n_sample=None, return_ds=Fa
         sample_y=sample_physics_data,
         sample_n=my_gen_sample_size,
     )
-    dl = DataLoader(ds, batch_size=batch_size, num_workers=16, pin_memory=True)
+    dl = DataLoader(ds, batch_size=batch_size, num_workers=1, pin_memory=True)
     ds.reset_batch_sample_sizes()
     if return_ds:
         return dl, ds
